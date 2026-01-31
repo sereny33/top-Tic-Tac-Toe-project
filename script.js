@@ -38,23 +38,6 @@ function createPlayer(marker) {
     ||!gameboard.includes(0)отсутствуют свободные ячейки) {   
     
     Выбор текущего игрока
-    getCurrentPlayer() {
-        let currentPlayer;
-        let lastMarker;
-        
-        if(!lastMarker) {
-        lastMarker = 'X'}
-        
-        if(lastMarker = 'X') {
-            lastMarker = 'O';
-            curentPlayer = playerO;
-        } else {
-            lastMarker = 'X'
-            currentPlayer = playerX;
-        }
-
-        return currentPlayer
-    }; 
 
     Ячейке присваивается marker игрока currentPlayer;
     makeTurn(index) {
@@ -97,6 +80,30 @@ function playGame(gameboard, playerX, playerO) {
     }
     while (gameboard.includes(0)) {
         makeTurn()
+        // проверка победителя
+        if (gameboard[0] === 'X' && gameboard[3] === 'X' && gameboard[6] === 'X'
+        || gameboard[1] === 'X' && gameboard[4] === 'X' && gameboard[7] === 'X'
+        || gameboard[2] === 'X' && gameboard[5] === 'X' && gameboard[8] === 'X'
+        || gameboard[0] === 'X' && gameboard[1] === 'X' && gameboard[2] === 'X'
+        || gameboard[3] === 'X' && gameboard[4] === 'X' && gameboard[5] === 'X'
+        || gameboard[6] === 'X' && gameboard[7] === 'X' && gameboard[8] === 'X'
+        || gameboard[0] === 'X' && gameboard[4] === 'X' && gameboard[8] === 'X'
+        || gameboard[6] === 'X' && gameboard[4] === 'X' && gameboard[2] === 'X') {
+                console.log('X has won')
+                return
+        } else if (gameboard[0] === 'O' && gameboard[3] === 'O' && gameboard[6] === 'O'
+        || gameboard[1] === 'O' && gameboard[4] === 'O' && gameboard[7] === 'O'
+        || gameboard[2] === 'O' && gameboard[5] === 'O' && gameboard[8] === 'O'
+        || gameboard[0] === 'O' && gameboard[1] === 'O' && gameboard[2] === 'O'
+        || gameboard[3] === 'O' && gameboard[4] === 'O' && gameboard[5] === 'O'
+        || gameboard[6] === 'O' && gameboard[7] === 'O' && gameboard[8] === 'O'
+        || gameboard[0] === 'O' && gameboard[4] === 'O' && gameboard[8] === 'O'
+        || gameboard[6] === 'O' && gameboard[4] === 'O' && gameboard[2] === 'O'){
+            console.log('O has won')
+            return
+        } else if (!gameboard.includes(0)) {
+            console.log('Ничья')
+        }
     }
     return { gameboard, playerX, playerO, currentPlayer }
 }
