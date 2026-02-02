@@ -10,16 +10,19 @@
 <body>
     <main>
         <h1>Tic-Tac-Toe Game</h1>
+        <button type="button" id="start-btn" onclick="playGame()">Start Game</button>
+        <button type="button" id="reset-btn">Reset Gameboard</button>
+        <p class="currentPlayer">Current Player: <span id="currentPlayer"></span></p>
         <div class="gameboard-container">
-            <div class="field field1">1</div>
-            <div class="field field2">2</div>
-            <div class="field field3">3</div>
-            <div class="field field4">4</div>
-            <div class="field field5">5</div>
-            <div class="field field6">6</div>
-            <div class="field field7">7</div>
-            <div class="field field8">8</div>
-            <div class="field field9">9</div>
+            <div class="field field1" id="0"></div>
+            <div class="field field2" id="1"></div>
+            <div class="field field3" id="2"></div>
+            <div class="field field4" id="3"></div>
+            <div class="field field5" id="4"></div>
+            <div class="field field6" id="5"></div>
+            <div class="field field7" id="6"></div>
+            <div class="field field8" id="7"></div>
+            <div class="field field9" id="8"></div>
         </div>
     </main>
 </body>

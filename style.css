@@ -7,8 +7,62 @@
     grid-template-rows: 1fr 1fr 1fr;
     gap: 10px;
     padding: 10px;
+    justify-content: center;
+
 }
 
 .field {
     border: 1px solid black;
+}
+
+.yellow {
+    background-color: yellow;
+}
+
+.cross {
+    position: relative;
+}
+
+.cross::before,
+.cross::after {
+    content: '';
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    width: 4px;
+    height: 80%;
+    background-color: red;
+}
+
+
+.cross::before {
+  transform: translateX(-50%) rotate(45deg);
+}
+
+.cross::after {
+  transform: translateX(-50%) rotate(-45deg);
+}
+
+.circle {
+    position: relative;
+    justify-self: center;
+    align-self: center;
+    width: 100%;
+    height: 100%;
+
+}
+
+.circle::after {
+    content: '';
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    width: 80%;
+    height: 80%;
+    background-color: red;
+    border-radius: 50%; 
+}
+
+.circle::after {
+    transform: translateX(-50%);
 }
